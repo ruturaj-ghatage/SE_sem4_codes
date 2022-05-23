@@ -1,7 +1,7 @@
 ;Assignment 2 string length
 
 section .data
-str: db "Siuuuuuu", 0xA
+str: db "Assignment 2.......", 0xA
 len: equ $- str
 
 cnt: db 0

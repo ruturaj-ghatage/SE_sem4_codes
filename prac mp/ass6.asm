@@ -1,3 +1,6 @@
+;LDTR,GDTR........
+
+
 %MACRO IO 4
 MOV RAX, %1
 MOV RDI, %2
