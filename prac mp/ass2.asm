@@ -32,6 +32,7 @@ global _start
 
 _start:
 
+    print str, len
     input name, 17
 
     dec rax
