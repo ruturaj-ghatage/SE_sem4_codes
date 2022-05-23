@@ -93,34 +93,34 @@ _start:
 	
 	division:
 		xor rax, rax
-	xor rdx, rdx
-	mov rax, qword[num1]
-	div qword[num2]
-	mov rsi, DivisionResult
-	CALL HexToASCII
-	IO 01, 01, DivisionResult, 16
-	IO 01, 01, newLine, len
-	ret
+	    xor rdx, rdx
+	    mov rax, qword[num1]
+	    div qword[num2]
+	    mov rsi, DivisionResult
+	    CALL HexToASCII
+	    IO 01, 01, DivisionResult, 16
+	    IO 01, 01, newLine, len
+	    ret
 	
 
     label4:
         call Multiplication
         jmp menu
-        
+
 	Multiplication:
-	xor rax, rax
-	xor rdx, rdx
-	mov rax, qword[num1]
-	mul qword[num2]
-	push rax
-	mov rax, rdx
-	mov rsi, MultiplicationResult
-	CALL HexToASCII
-	pop rax
-	CALL HexToASCII
-	IO 01,01, MultiplicationResult, 32
-	IO 01, 01, newLine, len
-	ret
+        xor rax, rax
+        xor rdx, rdx
+        mov rax, qword[num1]
+        mul qword[num2]
+        push rax
+        mov rax, rdx
+        mov rsi, MultiplicationResult
+        CALL HexToASCII
+        pop rax
+        CALL HexToASCII
+        IO 01,01, MultiplicationResult, 32
+        IO 01, 01, newLine, len
+        ret
 
 	
 	mov rax, 60
@@ -130,7 +130,6 @@ _start:
         
 	con: 	
 		mov byte[cnt], 16
-		
 		
 		l1:
 			rol rax, 4

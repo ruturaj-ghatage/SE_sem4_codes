@@ -16,6 +16,7 @@ section .data
 	count db 0
 
 section .bss
+
 	num resb 03
 	result resb 08
 
@@ -31,6 +32,7 @@ _start:
 	IO 01, 01, msg1, len1
 	IO 00, 00, num, 8
 	call ASCIItoHex
+
 up:
 	inc byte[count]
 	push bx
@@ -94,4 +96,4 @@ HexToASCII:
 		inc rdi
 		loop dup1
 	IO 01, 01, result, 08
-ret
+	ret

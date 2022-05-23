@@ -1,7 +1,7 @@
 ;Assignment 2 string length
 
 section .data
-str: db "Unmesh is gayyyyyy", 0xA
+str: db "Siuuuuuu", 0xA
 len: equ $- str
 
 cnt: db 0
