@@ -41,20 +41,20 @@ _start:
     
     up1:
         mov rbx ,rsi
-    push rsi
-    call printadd
-    IO 01, 01, space, 01
-    pop rsi
+        push rsi
+        call printadd
+        IO 01, 01, space, 01
+        pop rsi
     
-    mov rdx,[rsi]
-    push rsi
-    call printdata 
-    IO 01, 01, newLine, 01
+        mov rdx,[rsi]
+        push rsi
+        call printdata 
+        IO 01, 01, newLine, 01
     
-    pop rsi
-    inc rsi
-    dec byte[count]
-    jnz up1
+        pop rsi
+        inc rsi
+        dec byte[count]
+        jnz up1
     
     IO 01, 01, msg2, len2
     mov byte[count],05
@@ -62,18 +62,18 @@ _start:
     
     up3: 
         mov rbx ,rsi
-    push rsi
-    call printadd
-    IO 01, 01, space, 01
-    pop rsi
-    mov rdx,[rsi]
-    push rsi
-    call printdata
-    IO 01, 01, newLine, 01
-    pop rsi
-    inc rsi
-    dec byte[count]
-    jnz up3
+        push rsi
+        call printadd
+        IO 01, 01, space, 01
+        pop rsi
+        mov rdx,[rsi]
+        push rsi
+        call printdata
+        IO 01, 01, newLine, 01
+        pop rsi
+        inc rsi
+        dec byte[count]
+        jnz up3
     mov rax,60
     mov rdi,00
     syscall
@@ -90,10 +90,10 @@ printadd:
         add al,07h
     l1:
         add al,30h
-    mov [rsi], al
-    inc rsi
-    dec byte[dig_count]
-    jnz up
+        mov [rsi], al
+        inc rsi
+        dec byte[dig_count]
+        jnz up
 
     IO 01, 01, address,16
     ret
